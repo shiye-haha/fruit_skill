@@ -12,9 +12,10 @@ description: Use when planning or generating a six-image 1:1 e-commerce product 
 1. 先判断商品类型、实拍能证明的商品事实、可修整问题，以及当前图片属于常规商品图还是明确要求的场景图。
 2. 按优先级处理：商品身份正确 > 实拍级真实感 > 核心特征保持 > 必要美化 > 摄影表现 > 美观。真实性与美观冲突时保留真实性。
 3. 根据当前图号读取 [六图任务规范](references/six-image-plan.md)，制定该张唯一且具体的方案。六张图承担不同信息任务，不重复表达。
-4. 写 Prompt 前读取 [四段提示词框架](references/prompt-framework.md) 和相关的 [真实性与修整边界](references/product-fidelity-and-retouch.md)、[摄影与构图规则](references/composition-lighting.md)。生成后按 [质检与返工规则](references/quality-and-retry.md) 检查。
-5. 最终发送给生图模型的 Prompt 必须为四个紧凑自然语言段落：商品真实基准、本张拍摄方案、摄影与商业优化、真实性与失败约束。只发送已确定的一套执行方案，不附候选方案，不发送 Skill 原文。
-6. 按用户当前请求交付方案、Prompt 或图片。按当前图号检查结果并依照质检规则返工；只有用户要求整套六图时才连续处理后续图。单张任务完成后停止当前任务。
+4. 写 Prompt 前读取相关的 [真实性与修整边界](references/product-fidelity-and-retouch.md) 和 [摄影与构图规则](references/composition-lighting.md)。V1.1 的九项内容要求是完整性检查表，映射到四段而非另成九段：商品事实、必须保持、允许美化放第一段；构图、背景与场景放第二段；摄影类型、光线和具体修图放第三段；禁止项与输出规格放第四段。每句话表达一个主要目标。生成后按 [质检与返工规则](references/quality-and-retry.md) 检查。
+5. 需要借鉴柚子、凤梨等既有案例的画面表达时，可选读[案例提示词方向参考](references/prompt-directions-from-cases.md)。它只提供案例灵感，不增加硬性规则，也不覆盖本 Skill 或用户本次要求。
+6. 最终发送给生图模型的 Prompt 必须为四个紧凑自然语言段落：商品真实基准、本张拍摄方案、摄影与商业优化、真实性与失败约束。只发送已确定的一套执行方案，不附候选方案，不发送 Skill 原文。
+7. 按用户当前请求交付方案、Prompt 或图片。按当前图号检查结果并依照质检规则返工；只有用户要求整套六图时才连续处理后续图。单张任务完成后停止当前任务。
 
 ## 固定要求
 
